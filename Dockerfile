@@ -1,7 +1,7 @@
 FROM ubuntu
 MAINTAINER Tobias Overkamp <tov@nrw.net>
 #RUN apt-get update && apt-get upgrade
-RUN apt-get install ruby git
+RUN apt-get install -y ruby rubygems git
 
 RUN git clone https://github.com/fenton42/docker-sinatra-hello-world
 ADD . /opt/sinatra
