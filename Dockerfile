@@ -1,7 +1,10 @@
 FROM ubuntu
-RUN apt-get install -y ruby rubygems git
-RUN git clone https://github.com/luisbebop/docker-sinatra-hello-world.git /opt/sinatra/
+MAINTAINER Tobias Overkamp <tov@nrw.net>
+
+RUN git clone https://github.com/fenton42/docker-sinatra-hello-world
+ADD . /opt/sinatra
 RUN gem install bundler
-EXPOSE 5000
+EXPOSE 80
 RUN cd /opt/sinatra && git pull && bundle install
 CMD ["/usr/local/bin/foreman","start","-d","/opt/sinatra"]
+

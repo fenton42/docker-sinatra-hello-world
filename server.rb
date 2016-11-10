@@ -5,6 +5,6 @@ set :bind, '0.0.0.0'
  
 set :logging, true
  
-get '/' do
-  'hello world from docker!'
+get '/ack_key' do
+  'hello world from docker!' + params[:key].to_s
 end
